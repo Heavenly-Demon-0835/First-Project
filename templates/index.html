@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube URL Fetcher</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="glass-container">
+        <h1 class="title">YouTube URL Fetcher</h1>
+        <p class="subtitle">Enrich your song lists with YouTube URLs in seconds.</p>
+        <form action="/upload" method="post" enctype="multipart/form-data" id="uploadForm">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                </div>
+                <label for="file" class="upload-label">
+                    <span class="highlight">Click to browse</span> or drag and drop your Excel file here
+                </label>
+                <input type="file" id="file" name="file" accept=".xlsx, .xls" required>
+            </div>
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span>Process File</span>
+                <div class="spinner"></div>
+            </button>
+            <div id="progressText" class="progress-text mt-3" style="display: none; text-align: center; color: #a7f3d0; font-weight: 600; margin-top: 15px;"></div>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
